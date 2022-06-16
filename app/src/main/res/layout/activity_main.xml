@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/placeholder"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,32 +12,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
-        android:text="UVOD NASLOV"
+        android:layout_marginTop="72dp"
+        android:text="GameDB"
+        android:textColor="#FFFFFF"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="442dp"
+        android:layout_height="267dp"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/uvod"
-        app:layout_constraintStart_toStartOf="@+id/uvod"
-        app:layout_constraintTop_toBottomOf="@+id/uvod">
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Igricee" />
+            android:layout_width="104dp"
+            android:layout_height="66dp"
+            android:layout_marginBottom="40dp"
+            android:text="Spisak igara" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="104dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="16dp"
+            android:text="Button" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
