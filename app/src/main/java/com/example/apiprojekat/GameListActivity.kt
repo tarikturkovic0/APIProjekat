@@ -24,6 +24,7 @@ class GameListActivity : AppCompatActivity() {
             setContentView(view)
 
 
+        val recyclerView = binding.rv
 
         GameAPI.retrofitService.getGames().enqueue(
             object: Callback<APIResponse> {
@@ -32,8 +33,7 @@ class GameListActivity : AppCompatActivity() {
                     response: Response<APIResponse>
                 ) {
                    val gameData = response.body()?.results ?: listOf()
-                    val recyclerView = binding.rv
-                    recyclerView.adapter = GameAdapter(applicationContext, gameData)
+                    recyclerView.adapter = GameAdapter(this@GameListActivity, gameData)
                     // Use this setting to improve performance if you know that changes
                     // in content do not change the layout size of the RecyclerView
                     recyclerView.setHasFixedSize(true)

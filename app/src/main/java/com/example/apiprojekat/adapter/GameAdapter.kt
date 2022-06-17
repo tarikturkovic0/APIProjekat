@@ -3,14 +3,15 @@ package com.example.apiprojekat.adapter
 
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.apiprojekat.GameDetailsActivity
 import com.example.apiprojekat.R
-
 
 
 class GameAdapter(
@@ -46,10 +47,11 @@ class GameAdapter(
     override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
         val game = dataset[position]
         holder.game_title.text = game.name
-        holder.rating.text = game.rating
-        /*holder.detaljiButton.setOnClickListener{
+        holder.detaljiButton.setOnClickListener{
+            context.startActivity(Intent(context, GameDetailsActivity::class.java).putExtra("id",game.id))
 
-        }*/
+
+        }
     }
 
     /**
