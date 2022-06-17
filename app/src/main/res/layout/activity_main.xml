@@ -4,38 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/placeholder"
+    android:background="@drawable/pozadina"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/uvod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:layout_marginTop="72dp"
-        android:text="GameDB"
-        android:textColor="#FFFFFF"
-        android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="442dp"
         android:layout_height="267dp"
+        android:layout_marginBottom="60dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/button"
-            android:layout_width="104dp"
-            android:layout_height="66dp"
+            android:layout_width="164dp"
+            android:layout_height="86dp"
             android:layout_marginBottom="40dp"
-            android:text="Spisak igara" />
+            android:text="Spisak igara"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button2"
@@ -44,5 +36,15 @@
             android:layout_marginBottom="16dp"
             android:text="Button" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="305dp"
+        android:layout_height="191dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

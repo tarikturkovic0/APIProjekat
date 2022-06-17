@@ -47,6 +47,7 @@ class GameAdapter(
     override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
         val game = dataset[position]
         holder.game_title.text = game.name
+        holder.rating.text = game.rating
         holder.detaljiButton.setOnClickListener{
             context.startActivity(Intent(context, GameDetailsActivity::class.java).putExtra("id",game.id))
 

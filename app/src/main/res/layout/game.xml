@@ -7,14 +7,19 @@
     android:id="@+id/game"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp"
-    android:background="@color/cardview_dark_background">
+    android:background="#131313"
+    android:padding="5dp">
 
 
     <TextView
         android:id="@+id/rating"
-        android:layout_width="66dp"
-        android:layout_height="40dp"
+        android:layout_width="102dp"
+        android:layout_height="60dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/game_title"
         app:layout_constraintHorizontal_bias="0.5"
@@ -23,8 +28,12 @@
 
     <TextView
         android:id="@+id/game_title"
-        android:layout_width="188dp"
-        android:layout_height="40dp"
+        android:layout_width="167dp"
+        android:layout_height="54dp"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/detalji"
         app:layout_constraintHorizontal_bias="0.5"
@@ -33,11 +42,12 @@
 
     <Button
         android:id="@+id/detalji"
-        android:layout_width="96dp"
-        android:layout_height="45dp"
+        android:layout_width="109dp"
+        android:layout_height="53dp"
         android:text="@string/detalji"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/game_title"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
