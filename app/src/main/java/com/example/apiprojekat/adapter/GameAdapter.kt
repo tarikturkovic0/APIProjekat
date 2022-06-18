@@ -12,11 +12,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apiprojekat.GameDetailsActivity
 import com.example.apiprojekat.R
+import com.example.apiprojekat.network.Game
 
 
 class GameAdapter(
     private val context: Context,
-    private val dataset: List<com.example.apiprojekat.network.Game>
+    private var dataset: List<Game>,
+    private val OriginalDataset : List<Game> = dataset
 ) : RecyclerView.Adapter<GameAdapter.GameViewHolder>() {
 
     // Provide a reference to the views for each data item
@@ -53,6 +55,28 @@ class GameAdapter(
 
 
         }
+
+    }
+    fun filterData(flag : Int)  {
+
+        if (flag == 1) {
+        val filteredList = mutableListOf<Game>()
+        val itr = OriginalDataset.iterator()
+        while (itr.hasNext())
+        {
+            val curr = itr.next()
+
+            if (curr.rating.toFloat() > 4 ) {
+                filteredList.add(curr)
+            }
+        }
+        dataset =  filteredList.toList()
+        }
+        else {
+            dataset = OriginalDataset
+        }
+        notifyDataSetChanged()
+
     }
 
     /**

@@ -17,6 +17,7 @@ import javax.sql.DataSource
 
 class GameListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameListBinding
+    private lateinit var adapter : GameAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
             binding = ActivityGameListBinding.inflate(layoutInflater)
@@ -24,8 +25,12 @@ class GameListActivity : AppCompatActivity() {
             setContentView(view)
 
 
-        val recyclerView = binding.rv
+        val switch = binding.switch2
 
+
+        val recyclerView = binding.rv
+        adapter = GameAdapter(this@GameListActivity, mutableListOf<Game>())
+        recyclerView.adapter = adapter
         GameAPI.retrofitService.getGames().enqueue(
             object: Callback<APIResponse> {
                 override fun onResponse(
@@ -33,7 +38,8 @@ class GameListActivity : AppCompatActivity() {
                     response: Response<APIResponse>
                 ) {
                    val gameData = response.body()?.results ?: listOf()
-                    recyclerView.adapter = GameAdapter(this@GameListActivity, gameData)
+                    adapter = GameAdapter(this@GameListActivity, gameData)
+                    recyclerView.adapter = adapter
                     // Use this setting to improve performance if you know that changes
                     // in content do not change the layout size of the RecyclerView
                     recyclerView.setHasFixedSize(true)
@@ -46,7 +52,14 @@ class GameListActivity : AppCompatActivity() {
 
                 }
             })
-
+            switch.setOnCheckedChangeListener { compoundButton, b ->
+                if (switch.isChecked) {
+                   adapter.filterData(1)
+                }
+                else {
+                    adapter.filterData(0)
+                }
+            }
 
 
     }
