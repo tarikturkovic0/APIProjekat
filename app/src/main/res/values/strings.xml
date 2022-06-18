@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">APIProjekat</string>
     <string name="detalji">Detalji</string>
+    <string name="sacuvaj_igru">Sačuvaj igru</string>
 </resources>

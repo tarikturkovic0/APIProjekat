@@ -12,7 +12,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apiprojekat.GameDetailsActivity
 import com.example.apiprojekat.R
-import com.example.apiprojekat.network.Game
+import com.example.apiprojekat.Game
 
 
 class GameAdapter(

@@ -1,6 +1,10 @@
 package com.example.apiprojekat.network
 
 import android.provider.Contacts
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.example.apiprojekat.Game
 import com.squareup.moshi.Json
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -45,29 +49,6 @@ data class APIResponse(
     val count: Int,
     @Json(name= "results")
     val results : List<Game>
-
-)
-
-data class Game(
-    @Json(name = "id")
-    val id : Int,
-
-    @Json(name= "name")
-    val name : String,
-
-    @Json(name= "released")
-    val released : String,
-
-    @Json(name= "rating")
-    val rating : String,
-
-    @Json(name="background_image")
-    val image : String,
-
-    @Json(name="playtime")
-    val playtime : Int
-
-
 
 )
 

@@ -6,7 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.apiprojekat.adapter.GameAdapter
 import com.example.apiprojekat.databinding.ActivityGameListBinding
 import com.example.apiprojekat.network.APIResponse
-import com.example.apiprojekat.network.Game
+import com.example.apiprojekat.Game
+import com.example.apiprojekat.db.Db
 import com.example.apiprojekat.network.GameAPI
 import okhttp3.ResponseBody
 import org.json.JSONObject
@@ -46,9 +47,12 @@ class GameListActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<APIResponse?>?, t: Throwable?) {
-                    if (t != null) {
-                        Log.d("odgovor",t.message.toString())
-                    }
+
+                    val gameDao = Db.getInstance(application).dbDao
+                    val savedGames = gameDao.getAll()
+                    adapter = GameAdapter(this@GameListActivity,savedGames)
+                    recyclerView.adapter = adapter
+                    recyclerView.setHasFixedSize(true)
 
                 }
             })
