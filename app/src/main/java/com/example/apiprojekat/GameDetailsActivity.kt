@@ -63,8 +63,9 @@ class GameDetailsActivity : AppCompatActivity() {
                         binding.name.text = gameData.name
                         binding.released.text = gameData.released
                         binding.gameRating.text = gameData.rating
-                        binding.playtime.text = gameData.playtime.toString()
+                        binding.playtime.text = gameData.playtime.toString() + "h"
                         Glide.with(view).load(gameData.image).into(binding.gamePhoto)
+                        Log.d(gameData.image, "nesto")
                     }
 
                 }

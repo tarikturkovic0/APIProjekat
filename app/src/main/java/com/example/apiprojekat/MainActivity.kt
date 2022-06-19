@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
+import android.view.View
+import androidx.navigation.NavDeepLinkBuilder
+import androidx.navigation.findNavController
 import com.example.apiprojekat.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,8 +25,10 @@ class MainActivity : AppCompatActivity() {
         }
         binding.button2.setOnClickListener {
             val intent = Intent(this, PublishersListActivity::class.java)
-
             startActivity(intent)
+        }
+        binding.button4.setOnClickListener {
+
         }
     }
 }
