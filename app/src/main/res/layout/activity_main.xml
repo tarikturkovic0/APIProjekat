@@ -31,10 +31,10 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="104dp"
+            android:layout_width="164dp"
             android:layout_height="49dp"
             android:layout_marginBottom="16dp"
-            android:text="Button" />
+            android:text="Spisak izdavača" />
     </LinearLayout>
 
     <ImageView
