@@ -39,7 +39,7 @@ class PublisherDetailsActivity : AppCompatActivity() {
                     val publisherData = response.body()
                     if (publisherData != null) {
                         binding.publisherName.text = publisherData.name
-                        binding.gamesCount.text = "Number of games released : " + publisherData.gamesCount.toString()
+                        binding.gamesCount.text = "Broj objavljenih igara: " + publisherData.gamesCount.toString()
                         binding.publisherDesc.text = HtmlCompat.fromHtml(publisherData.description!!,0)
                         Glide.with(view).load(publisherData.imageBackground).into(binding.publisherPhoto)
                     }

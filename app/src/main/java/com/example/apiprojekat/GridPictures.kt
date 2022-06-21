@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.apiprojekat.adapter.GridAdapter
 
 class GridPictures : Fragment() {
@@ -17,13 +18,20 @@ class GridPictures : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        val view =  inflater.inflate(R.layout.fragment_grid_pictures, container, false)
+
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
         var manager = GridLayoutManager(this.context, 2)
-        var recyclerView = R.id.recycler
+        var recyclerView = view.findViewById<RecyclerView>(R.id.recycler)
+        val adapter = GridAdapter(vratiSlike(),view.context)
+        recyclerView.adapter = adapter
         recyclerView.apply {
-            LinearLayoutManager(activity)
-            GridAdapter(vratiSlike(), requireContext())
+            LinearLayoutManager(view.context)
         }
-        return inflater.inflate(R.layout.fragment_grid_pictures, container, false)
     }
     private fun vratiSlike() : ArrayList<String>{
         var list : ArrayList<String> = ArrayList<String>()

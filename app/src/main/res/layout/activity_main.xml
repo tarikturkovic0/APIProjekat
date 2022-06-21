@@ -4,55 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/activityMain"
     android:background="@drawable/pozadina"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="305dp"
-        android:layout_height="191dp"
-        android:layout_marginTop="76dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navHost"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
 
-    <LinearLayout
-        android:layout_width="442dp"
-        android:layout_height="450dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent"
+        android:hapticFeedbackEnabled="false"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/my_nav"
+        tools:layout_editor_absoluteY="598dp">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="203dp"
-            android:layout_height="86dp"
-            android:layout_marginBottom="40dp"
-            android:text="Spisak igara"
-            android:textAllCaps="true"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="164dp"
-            android:layout_height="67dp"
-            android:layout_marginBottom="16dp"
-            android:text="Spisak izdavača" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="164dp"
-            android:layout_height="67dp"
-            android:layout_marginBottom="40dp"
-            android:text="Galerija"
-            android:textAllCaps="true"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+    </androidx.fragment.app.FragmentContainerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

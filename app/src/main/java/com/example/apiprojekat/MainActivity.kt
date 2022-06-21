@@ -1,13 +1,16 @@
 package com.example.apiprojekat
 
+import android.R
+import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.AlarmClock.EXTRA_MESSAGE
-import android.view.View
-import androidx.navigation.NavDeepLinkBuilder
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.apiprojekat.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -18,17 +21,6 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.button.setOnClickListener{
-            val intent = Intent(this, GameListActivity::class.java)
 
-            startActivity(intent)
-        }
-        binding.button2.setOnClickListener {
-            val intent = Intent(this, PublishersListActivity::class.java)
-            startActivity(intent)
-        }
-        binding.button4.setOnClickListener {
-
-        }
     }
 }
