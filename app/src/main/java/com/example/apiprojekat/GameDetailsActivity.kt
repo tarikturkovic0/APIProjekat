@@ -1,5 +1,6 @@
 package com.example.apiprojekat
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -28,6 +29,22 @@ class GameDetailsActivity : AppCompatActivity() {
         val gameDao = Db.getInstance(application).dbDao
         val gameId = intent.getIntExtra("id",0)
         val sacuvaj = binding.sacuvaj
+
+        val shareBtn = binding.share
+        shareBtn.setOnClickListener {
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, "Igra "+binding.name.text.toString() +
+                        " je izbacena " +binding.released.text.toString() +
+                        "i prosjecno vrijeme igranja je " + binding.playtime.text.toString() +" sati.")
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
+
+
         if (gameDao.getGameById(gameId) == null) {
             binding.sacuvaj.text = "Sacuvaj igru"
             sacuvaj.setOnClickListener {

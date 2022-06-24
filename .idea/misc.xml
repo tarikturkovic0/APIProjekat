@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Amir/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/activity_game_details.xml" value="0.1" />
+        <entry key="..\:/Users/Amir/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/activity_game_details.xml" value="0.22" />
         <entry key="..\:/Users/Amir/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/activity_game_list.xml" value="0.11195542046605876" />
         <entry key="..\:/Users/Amir/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/activity_main.xml" value="0.12" />
         <entry key="..\:/Users/Amir/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/activity_publisher_details.xml" value="0.24230072463768115" />
@@ -14,6 +14,7 @@
         <entry key="..\:/Users/Amir/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/fragment_home.xml" value="0.24230072463768115" />
         <entry key="..\:/Users/Amir/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/game.xml" value="0.11195542046605876" />
         <entry key="..\:/Users/Amir/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/publisher.xml" value="0.22" />
+        <entry key="..\:/Users/Amir/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/recycler_grid_item.xml" value="0.17527173913043478" />
         <entry key="..\:/Users/turko/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/activity_game_details.xml" value="0.1956521739130435" />
         <entry key="..\:/Users/turko/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/activity_game_list.xml" value="0.33" />
         <entry key="..\:/Users/turko/AndroidStudioProjects/APIProjekat/app/src/main/res/layout/activity_main.xml" value="0.22" />
